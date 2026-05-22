@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int  sum = 0;
+        int maxi= INT_MIN;
+        for(const auto& val : nums){
+            sum+=val;
+            if(sum>maxi){
+                maxi=sum;
+            }
+            if(sum<0){
+                sum=0;
+            }
+            
+        }
+        return maxi;
+
+        
+    }
+};
