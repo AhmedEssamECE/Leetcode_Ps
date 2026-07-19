@@ -1,5 +1,5 @@
 -- Write your PostgreSQL query statement below
 select activity_date as day,count(distinct(user_id)) as active_users
 from Activity 
-where activity_date between '2019-6-28' and '2019-07-27' 
+where activity_date <= '2019-07-27' and activity_date > date '2019-07-27' - INTERVAL '30 day'
 group by activity_date;
